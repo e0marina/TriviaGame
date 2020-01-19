@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <title>Trivia Game</title>
+  </head>
+  <body>
+    <!-- <p>If you click on the "Hide" button, I will disappear.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button> -->
+    <!-- Always Shows -->
+    <div class="pageContainer">
+      <div id="background">
+        <div id="main-box">
+          <div id="header"><h1>Coffee Trivia!</h1></div>
+          <!-- Welcome Page -button hides after start button pushed -->
+          <div class="button">
+            <button id="start">Start</button>
+          </div>
+          <!-- Trivia Page -- shows during time of game play -->
+          <div class="triviaPage">
+            <div id="time-remaining"><p>Time Remaining:</p></div>
+            <div id="questions">
+              <p>Which type of coffee has the most caffeine?</p>
+              <input
+                type="radio"
+                name="caffeine"
+                value="light roast"
+                required
+              />Light Roast<br />
+              <input
+                type="radio"
+                name="caffeine"
+                value="dark roast"
+                required
+              />Dark Roast<br />
+              <input
+                type="radio"
+                name="caffeine"
+                value="espresso"
+                required
+              />Espresso<br />
+
+              <p>Which US state is the only one to grow coffee?</p>
+              <input
+                type="radio"
+                name="state"
+                value="florida"
+                required
+              />Florida<br />
+              <input
+                type="radio"
+                name="state"
+                value="georgia"
+                required
+              />Georgia<br />
+              <input
+                type="radio"
+                name="state"
+                value="hawaii"
+                required
+              />Hawaii<br />
+
+              <p>What is a coffee bean?</p>
+              <input
+                type="radio"
+                name="bean"
+                value="legume"
+                required
+              />Legume<br />
+              <input type="radio" name="bean" value="seed" required />
+              Seed<br />
+              <input
+                type="radio"
+                name="bean"
+                value="fruit"
+                required
+              />Fruit<br />
+
+              <p>Which country grows the most coffee in the world?</p>
+              <input
+                type="radio"
+                name="country"
+                value="brazil"
+                required
+              />Brazil<br />
+              <input
+                type="radio"
+                name="country"
+                value="vietnam"
+                required
+              />Vietnam<br />
+              <input
+                type="radio"
+                name="country"
+                value="columbia"
+                required
+              />Columbia<br />
+
+              <p>How much is the annual trade of coffee worth?</p>
+              <input type="radio" name="cost" value="100mill" required />100
+              million dollars<br />
+              <input type="radio" name="cost" value="50bill" required />50
+              billion dollars<br />
+              <input type="radio" name="cost" value="100bill" required />100
+              billion dollars<br />
+              <p>
+                What is the average amount American's spend on coffee each year?
+              </p>
+              <input type="radio" name="avg" value="500" required />500
+              dollars<br />
+              <input type="radio" name="avg" value="800" required />800
+              dollars<br />
+              <input type="radio" name="avg" value="1100" required />1100
+              dollars<br />
+            </div>
+            <div class="button"><button id="done-button">Done</button></div>
+          </div>
+
+          <!-- Score Page - shows when user hits done or timer out  -->
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/javascript/app.js"></script>
+  </body>
+</html>
