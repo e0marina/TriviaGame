@@ -1,0 +1,61 @@
+body {
+  background-image: url("beans.jpg");
+  background-color: brown;
+}
+* {
+  box-sizing: border-box;
+}
+#main-box {
+  background-color: cornsilk;
+  padding: 40px;
+  margin: 30px;
+  width: auto;
+  height: 800px;
+}
+#header {
+  text-align: center;
+  font-family: "Bangers", cursive;
+  font-size: 60px;
+}
+
+#start {
+  margin-left: 500px;
+  margin-top: 100px;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: grey;
+  color: #ffffff;
+  font-size: 24px;
+  display: none;
+}
+
+.triviaPage {
+  font-family: sans-serif;
+  padding: 30px;
+}
+#time-remaining {
+  font-size: 24px;
+  margin-left: 250px;
+  margin-bottom: 20px;
+}
+#questions {
+  margin-left: 200px;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#done-button {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: grey;
+  color: #ffffff;
+  font-size: 24px;
+  margin-left: 500px;
+}
+#score-page {
+  display: none;
+}
