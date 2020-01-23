@@ -27,7 +27,6 @@ body {
   background-color: grey;
   color: #ffffff;
   font-size: 24px;
-  display: none;
 }
 
 .triviaPage {
@@ -57,5 +56,12 @@ p {
   margin-left: 500px;
 }
 #score-page {
-  display: none;
+  font-family: sans-serif;
+  margin-left: 525px;
+  padding-top: 50px;
+}
+
+#done {
+  font-size: 35px;
+  font-weight: bold;
 }
