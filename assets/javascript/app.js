@@ -1,5 +1,6 @@
 //TO DO:
 //=======================
+//clear the interval at the end of the game so time doesn't go neg.
 //user chooses answers
 //either time runs out or user clicks done
 //there are right answers that are recorded (then displayed)
@@ -12,28 +13,20 @@ var intervalId;
 //took this from the stopwatch activity
 // prevents the clock from being sped up unnecessarily
 var clockRunning = false;
-var time = 0;
+var time = 120;
 //FUNCTIONS
 //==============================================
 $(document).ready(function() {
   //on page load, triviaPage and Score-Page are hidden
   $(".triviaPage").hide();
   $("#score-page").hide();
-});
-
-//when start button clicked, triviaPage revealed, and start button hidden
-$("#start").click(function() {
-  $(".triviaPage").show();
-  $("#start").hide();
-  //start the countdown, function called
-  start();
-  //timer counts down from 120 seconds (displayed on screen)
-  $("#time-remaining").text("2:00");
 
   function start() {
-    // Use setInterval to start the count here and set the clock to running.
+    console.log("start func working");
+
+    // Use setInterval to start the count here and set the clock to running...for 2 minutes
     if (!clockRunning) {
-      intervalId = setInterval(count, 120000);
+      intervalId = setInterval(count, 1000);
       clockRunning = true;
     }
   }
@@ -41,6 +34,7 @@ $("#start").click(function() {
   function count() {
     // decrement time by 1
     time--;
+    console.log("count", time);
 
     //  Get the current time, pass that into the timeConverter function,
     //       and save the result in a variable.
@@ -67,11 +61,23 @@ $("#start").click(function() {
 
     return minutes + ":" + seconds;
   }
-});
+  //when start button clicked, triviaPage revealed, and start button hidden
+  $("#start").click(function() {
+    //I'm running btw
+    console.log("i'm working");
 
-//when done button clicked, triviaPage hidden and score-page revealed
-$("#done-button").click(function() {
-  $(".triviaPage").hide();
-  $("#done-button").hide();
-  $("#score-page").show();
+    $(".triviaPage").show();
+    $("#start").hide();
+    //start the countdown, function called
+    start();
+    //timer counts down from 120 seconds (displayed on screen)
+    $("#time-remaining").text("2:00");
+  });
+
+  //when done button clicked, triviaPage hidden and score-page revealed
+  $("#done-button").click(function() {
+    $(".triviaPage").hide();
+    $("#done-button").hide();
+    $("#score-page").show();
+  });
 });
