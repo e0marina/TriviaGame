@@ -1,6 +1,6 @@
 //TO DO:
 //=======================
-//clear the interval at the end of the game so time doesn't go neg.
+//left off around line 47
 //user chooses answers
 //either time runs out or user clicks done
 //there are right answers that are recorded (then displayed)
@@ -43,6 +43,15 @@ $(document).ready(function() {
 
     // Use the variable we just created to show the converted time in the "time-remaining" div.
     $("#time-remaining").text(converted);
+
+    //clear the interval so that time doesn't go negative
+    if (converted === 0) {
+    }
+
+    function stopTimerFunction() {
+      clearInterval(intervalId);
+    }
+    stopTimerFunction();
   }
 
   function timeConverter(t) {
