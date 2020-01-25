@@ -1,7 +1,6 @@
 //TO DO:
 //=======================
 
-//user chooses answers
 //either users choices are right or not
 //either time runs out or user clicks done
 //there are right answers that are recorded (then displayed)
@@ -56,6 +55,9 @@ $(document).ready(function() {
         clearInterval(intervalId);
       }
       stopTimerFunction();
+      $(".triviaPage").hide();
+      $("#done-button").hide();
+      $("#score-page").show();
     }
   }
 
@@ -97,21 +99,7 @@ $(document).ready(function() {
     correctAnsw++;
   });
 
-  // //listen for users choice on each question
-  // $("input[type='radio']").click(function() {
-  //   var radioValueQ1 = $("input[name='caffeine']:checked").val();
-  //   var radioValueQ2 = $("input[name='state']:checked").val();
-  //   var radioValueQ3 = $("input[name='bean']:checked").val();
-  //   var radioValueQ4 = $("input[name='country']:checked").val();
-  //   var radioValueQ5 = $("input[name='cost']:checked").val();
-  //   var radioValueQ5 = $("input[name='avg']:checked").val();
-  //   //compare user choice to correct answer on each question
-  //   if ($(".correct")) {
-
-  //   } else {
-
-  //   }
-  // });
+  //display tally of correct answers, incorrect answers and unanswered
 
   //when done button clicked, triviaPage hidden and score-page revealed
   $("#done-button").click(function() {
