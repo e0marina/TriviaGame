@@ -1,6 +1,6 @@
 //TO DO:
 //=======================
-//left off around line 47
+
 //user chooses answers
 //either users choices are right or not
 //either time runs out or user clicks done
@@ -15,6 +15,8 @@ var intervalId;
 // prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var time = 120;
+//stores correct answers
+var correctAnsw = 0;
 //FUNCTIONS
 //==============================================
 $(document).ready(function() {
@@ -86,6 +88,30 @@ $(document).ready(function() {
     //timer counts down from 120 seconds (displayed on screen)
     $("#time-remaining").text("2:00");
   });
+
+  //if user chooses correct answer...
+  $(".correct").click(function() {
+    //test this function is working
+    console.log("correct answer!");
+    //increase count of correct answers
+    correctAnsw++;
+  });
+
+  // //listen for users choice on each question
+  // $("input[type='radio']").click(function() {
+  //   var radioValueQ1 = $("input[name='caffeine']:checked").val();
+  //   var radioValueQ2 = $("input[name='state']:checked").val();
+  //   var radioValueQ3 = $("input[name='bean']:checked").val();
+  //   var radioValueQ4 = $("input[name='country']:checked").val();
+  //   var radioValueQ5 = $("input[name='cost']:checked").val();
+  //   var radioValueQ5 = $("input[name='avg']:checked").val();
+  //   //compare user choice to correct answer on each question
+  //   if ($(".correct")) {
+
+  //   } else {
+
+  //   }
+  // });
 
   //when done button clicked, triviaPage hidden and score-page revealed
   $("#done-button").click(function() {
