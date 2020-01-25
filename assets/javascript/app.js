@@ -2,6 +2,7 @@
 //=======================
 //left off around line 47
 //user chooses answers
+//either users choices are right or not
 //either time runs out or user clicks done
 //there are right answers that are recorded (then displayed)
 //unanswered counted and recorded (then displayed)
@@ -28,6 +29,7 @@ $(document).ready(function() {
     if (!clockRunning) {
       intervalId = setInterval(count, 1000);
       clockRunning = true;
+      console.log("clock is running");
     }
   }
 
@@ -45,13 +47,14 @@ $(document).ready(function() {
     $("#time-remaining").text(converted);
 
     //clear the interval so that time doesn't go negative
-    if (converted === 0) {
-    }
+    if (time === 0) {
+      console.log("reached 0");
 
-    function stopTimerFunction() {
-      clearInterval(intervalId);
+      function stopTimerFunction() {
+        clearInterval(intervalId);
+      }
+      stopTimerFunction();
     }
-    stopTimerFunction();
   }
 
   function timeConverter(t) {
@@ -70,6 +73,7 @@ $(document).ready(function() {
 
     return minutes + ":" + seconds;
   }
+
   //when start button clicked, triviaPage revealed, and start button hidden
   $("#start").click(function() {
     //I'm running btw
