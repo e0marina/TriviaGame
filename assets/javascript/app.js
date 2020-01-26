@@ -104,28 +104,31 @@ $(document).ready(function() {
   };
 
   //listen for user click input on each radio button question
-
+  //define val outside of func
+  //compare to user input
+  //this doesn't work...returns 0 and nooo even if a correct answ chosen
+  var radioValueQ1;
   $("input[type='radio']").click(function() {
     var radioValueQ1 = $("input[name='caffeine']:checked").val();
-    //compare user choice to correct answer object on each question
-    if (radioValueQ1 === correctAnswObj.caffeine) {
-      console.log("yay!");
-      correctAnsw++;
-    } else {
-      console.log("noooo");
-    }
   });
+  if (radioValueQ1 === correctAnswObj.caffeine) {
+    console.log("yay!");
+    correctAnsw++;
+  } else {
+    console.log("noooo");
+  }
 
+  var radioValueQ2;
   $("input[type='radio']").click(function() {
     var radioValueQ2 = $("input[name='state']:checked").val();
-    if (radioValueQ2 === correctAnswObj.state) {
-      console.log("yay!");
-      correctAnsw++;
-    } else {
-      console.log("noooo");
-    }
-    console.log(correctAnsw);
   });
+  if (radioValueQ2 === correctAnswObj.state) {
+    console.log("yay!");
+    correctAnsw++;
+  } else {
+    console.log("noooo");
+  }
+  console.log(correctAnsw);
 
   // var radioValueQ3 = $("input[name='bean']:checked").val();
 
@@ -147,6 +150,8 @@ $(document).ready(function() {
   // } else {
   //   console.log("incorrect!");
   // }
+
+  //this might be the one closest to working
 
   // //if user chooses correct answer...
   // $(".correct").click(function() {
