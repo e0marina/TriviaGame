@@ -96,44 +96,31 @@ $(document).ready(function() {
   //listen for users choice on each question
   $("input[type='radio']").click(function() {
     var radioValueQ1 = $("input[name='caffeine']:checked").val();
-    var radioValueQ2 = $("input[name='state']:checked").val();
-    var radioValueQ3 = $("input[name='bean']:checked").val();
-    var radioValueQ4 = $("input[name='country']:checked").val();
-    var radioValueQ5 = $("input[name='cost']:checked").val();
-    var radioValueQ5 = $("input[name='avg']:checked").val();
     console.log(radioValueQ1);
-    //compare user choice to correct answer on each question
-    if (radioValueQ1 === "light roast") {
-      console.log("you're correct!");
-      correctAnsw++;
-    } else {
-      console.log("incorrect!");
-    }
-    if (radioValueQ2 === "hawaii") {
-      console.log("you're correct!");
-      correctAnsw++;
-    } else {
-      console.log("incorrect!");
-    }
-    if (radioValueQ3 === "brazil") {
-      console.log("you're correct!");
-      correctAnsw++;
-    } else {
-      console.log("incorrect!");
-    }
-    if (radioValueQ4 === "100bill") {
-      console.log("you're correct!");
-      correctAnsw++;
-    } else {
-      console.log("incorrect!");
-    }
-    if (radioValueQ5 === "1100") {
-      console.log("you're correct!");
-      correctAnsw++;
-    } else {
-      console.log("incorrect!");
-    }
   });
+  $("input[type='radio']").click(function() {
+    var radioValueQ2 = $("input[name='state']:checked").val();
+    console.log(radioValueQ2);
+  });
+
+  // var radioValueQ3 = $("input[name='bean']:checked").val();
+  // var radioValueQ4 = $("input[name='country']:checked").val();
+  // var radioValueQ5 = $("input[name='cost']:checked").val();
+  // var radioValueQ5 = $("input[name='avg']:checked").val();
+
+  // //compare user choice to correct answer on each question
+  // if (
+  //   radioValueQ1 === "light roast" ||
+  //   radioValueQ2 === "hawaii" ||
+  //   radioValueQ3 === "brazil" ||
+  //   radioValueQ4 === "100bill" ||
+  //   radioValueQ5 === "1100"
+  // ) {
+  //   console.log("you're correct!");
+  //   correctAnsw++;
+  // } else {
+  //   console.log("incorrect!");
+  // }
 
   // //if user chooses correct answer...
   // $(".correct").click(function() {
