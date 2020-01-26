@@ -103,31 +103,37 @@ $(document).ready(function() {
     avg: "1100"
   };
 
-  //listen for user click input on each radio button question and store vars outside of function
-  // var radioValueQ1;
-  // var radioValueQ2;
-  // var radioValueQ3;
-  // var radioValueQ4;
-  // var radioValueQ5;
-  // var radioValueQ6;
+  //listen for user click input on each radio button question
+
   $("input[type='radio']").click(function() {
     var radioValueQ1 = $("input[name='caffeine']:checked").val();
-    var radioValueQ2 = $("input[name='state']:checked").val();
-
-    var radioValueQ3 = $("input[name='bean']:checked").val();
-
-    var radioValueQ4 = $("input[name='country']:checked").val();
-
-    var radioValueQ5 = $("input[name='cost']:checked").val();
-
-    var radioValueQ6 = $("input[name='avg']:checked").val();
     //compare user choice to correct answer object on each question
     if (radioValueQ1 === correctAnswObj.caffeine) {
       console.log("yay!");
+      correctAnsw++;
     } else {
       console.log("noooo");
     }
   });
+
+  $("input[type='radio']").click(function() {
+    var radioValueQ2 = $("input[name='state']:checked").val();
+    if (radioValueQ2 === correctAnswObj.state) {
+      console.log("yay!");
+      correctAnsw++;
+    } else {
+      console.log("noooo");
+    }
+    console.log(correctAnsw);
+  });
+
+  // var radioValueQ3 = $("input[name='bean']:checked").val();
+
+  // var radioValueQ4 = $("input[name='country']:checked").val();
+
+  // var radioValueQ5 = $("input[name='cost']:checked").val();
+
+  // var radioValueQ6 = $("input[name='avg']:checked").val();
 
   //  if (
   //   radioValueQ1 === "light roast" ||
