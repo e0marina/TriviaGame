@@ -18,6 +18,12 @@ var time = 120;
 var correctAnsw = 0;
 var incorrectAnsw = 0;
 var unAnsw = 0;
+var clickedOne = document.getElementsByClassName("correct1");
+var clickedTwo = document.getElementsByClassName("correct2");
+var clickedThree = document.getElementsByClassName("correct3");
+var clickedFour = document.getElementsByClassName("correct4");
+var clickedFive = document.getElementsByClassName("correct5");
+var clickedSix = document.getElementsByClassName("correct6");
 
 //FUNCTIONS
 //==============================================
@@ -52,15 +58,7 @@ $(document).ready(function() {
 
     //clear the interval so that time doesn't go negative
     if (time === 0) {
-      console.log("reached 0");
-
-      function stopTimerFunction() {
-        clearInterval(intervalId);
-      }
-      stopTimerFunction();
-      $(".triviaPage").hide();
-      $("#done-button").hide();
-      $("#score-page").show();
+      timeoutOrDone();
     }
   }
 
@@ -93,63 +91,9 @@ $(document).ready(function() {
     //timer counts down from 120 seconds (displayed on screen)
     $("#time-remaining").text("2:00");
   });
-  //store correct answers in an object in format of input name: value
-  const correctAnswObj = {
-    caffeine: "light roast",
-    state: "hawaii",
-    bean: "seed",
-    country: "brazil",
-    cost: "100bill",
-    avg: "1100"
-  };
 
-  //listen for user click input on each radio button question
-  //define val outside of func
-  //compare to user input
-  //this doesn't work...returns 0 and nooo even if a correct answ chosen
-  var radioValueQ1;
-  $("input[type='radio']").click(function() {
-    var radioValueQ1 = $("input[name='caffeine']:checked").val();
-  });
-  if (radioValueQ1 === correctAnswObj.caffeine) {
-    console.log("yay!");
-    correctAnsw++;
-  } else {
-    console.log("noooo");
-  }
-
-  var radioValueQ2;
-  $("input[type='radio']").click(function() {
-    var radioValueQ2 = $("input[name='state']:checked").val();
-  });
-  if (radioValueQ2 === correctAnswObj.state) {
-    console.log("yay!");
-    correctAnsw++;
-  } else {
-    console.log("noooo");
-  }
-  console.log(correctAnsw);
-
-  // var radioValueQ3 = $("input[name='bean']:checked").val();
-
-  // var radioValueQ4 = $("input[name='country']:checked").val();
-
-  // var radioValueQ5 = $("input[name='cost']:checked").val();
-
-  // var radioValueQ6 = $("input[name='avg']:checked").val();
-
-  //  if (
-  //   radioValueQ1 === "light roast" ||
-  //   radioValueQ2 === "hawaii" ||
-  //   radioValueQ3 === "brazil" ||
-  //   radioValueQ4 === "100bill" ||
-  //   radioValueQ5 === "1100"
-  // ) {
-  //   console.log("you're correct!");
-  //   correctAnsw++;
-  // } else {
-  //   console.log("incorrect!");
-  // }
+  //create array of correct values?
+  //collect score once done or times out...that way don't have to worry about collecting score when a click happens
 
   //this might be the one closest to working
 
@@ -157,16 +101,34 @@ $(document).ready(function() {
   // $(".correct").click(function() {
   //   //test this function is working
   //   console.log("correct answer!");
-  //   //increase count of correct answers
-  //   correctAnsw++;
   // });
 
-  //display tally of correct answers, incorrect answers and unanswered
+  //check if each question is correct with an if statement. see if input w class of this value is checked
 
-  //when done button clicked, triviaPage hidden and score-page revealed
-  $("#done-button").click(function() {
+  //display tally of correct answers, incorrect answers and unanswered
+  //function for time out and done button
+  function timeoutOrDone() {
     $(".triviaPage").hide();
     $("#done-button").hide();
     $("#score-page").show();
+    console.log("reached 0");
+
+    clearInterval(intervalId);
+
+    if (clickedOne.checked) correctAnsw++;
+    console.log(clickedOne.checked);
+
+    if (clickedTwo.checked) correctAnsw++;
+    if (clickedThree.checked) correctAnsw++;
+    if (clickedFour.checked) correctAnsw++;
+    if (clickedFive.checked) correctAnsw++;
+    if (clickedSix.checked) correctAnsw++;
+    $("#correct-text").appendTo(correctAnsw);
+    $("#incorrect-text").appendTo(incorrectAnsw - correctAnsw);
+  }
+
+  //when done button clicked, triviaPage hidden and score-page revealed
+  $("#done-button").click(function() {
+    timeoutOrDone();
   });
 });
