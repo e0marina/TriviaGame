@@ -14,10 +14,11 @@ var intervalId;
 // prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var time = 120;
-//stores correct answers
+//stores answers
 var correctAnsw = 0;
 var incorrectAnsw = 0;
 var unAnsw = 0;
+
 //FUNCTIONS
 //==============================================
 $(document).ready(function() {
@@ -94,19 +95,24 @@ $(document).ready(function() {
   });
 
   //listen for users choice on each question
+  //store users choice one each q in a separate variable
   $("input[type='radio']").click(function() {
     var radioValueQ1 = $("input[name='caffeine']:checked").val();
-    console.log(radioValueQ1);
-  });
-  $("input[type='radio']").click(function() {
     var radioValueQ2 = $("input[name='state']:checked").val();
-    console.log(radioValueQ2);
+    var radioValueQ3 = $("input[name='bean']:checked").val();
+    var radioValueQ4 = $("input[name='country']:checked").val();
+    var radioValueQ5 = $("input[name='cost']:checked").val();
+    var radioValueQ5 = $("input[name='avg']:checked").val();
+    //put the clicked on variables into an array
+    var valueArray = [
+      radioValueQ1,
+      radioValueQ2,
+      radioValueQ3,
+      radioValueQ4,
+      radioValueQ5
+    ];
+    console.log(valueArray);
   });
-
-  // var radioValueQ3 = $("input[name='bean']:checked").val();
-  // var radioValueQ4 = $("input[name='country']:checked").val();
-  // var radioValueQ5 = $("input[name='cost']:checked").val();
-  // var radioValueQ5 = $("input[name='avg']:checked").val();
 
   // //compare user choice to correct answer on each question
   // if (
