@@ -93,29 +93,43 @@ $(document).ready(function() {
     //timer counts down from 120 seconds (displayed on screen)
     $("#time-remaining").text("2:00");
   });
+  //store correct answers in an object in format of input name: value
+  const correctAnswObj = {
+    caffeine: "light roast",
+    state: "hawaii",
+    bean: "seed",
+    country: "brazil",
+    cost: "100bill",
+    avg: "1100"
+  };
 
-  //listen for users choice on each question
-  //store users choice one each q in a separate variable
+  //listen for user click input on each radio button question and store vars outside of function
+  // var radioValueQ1;
+  // var radioValueQ2;
+  // var radioValueQ3;
+  // var radioValueQ4;
+  // var radioValueQ5;
+  // var radioValueQ6;
   $("input[type='radio']").click(function() {
     var radioValueQ1 = $("input[name='caffeine']:checked").val();
     var radioValueQ2 = $("input[name='state']:checked").val();
+
     var radioValueQ3 = $("input[name='bean']:checked").val();
+
     var radioValueQ4 = $("input[name='country']:checked").val();
+
     var radioValueQ5 = $("input[name='cost']:checked").val();
-    var radioValueQ5 = $("input[name='avg']:checked").val();
-    //put the clicked on variables into an array
-    var valueArray = [
-      radioValueQ1,
-      radioValueQ2,
-      radioValueQ3,
-      radioValueQ4,
-      radioValueQ5
-    ];
-    console.log(valueArray);
+
+    var radioValueQ6 = $("input[name='avg']:checked").val();
+    //compare user choice to correct answer object on each question
+    if (radioValueQ1 === correctAnswObj.caffeine) {
+      console.log("yay!");
+    } else {
+      console.log("noooo");
+    }
   });
 
-  // //compare user choice to correct answer on each question
-  // if (
+  //  if (
   //   radioValueQ1 === "light roast" ||
   //   radioValueQ2 === "hawaii" ||
   //   radioValueQ3 === "brazil" ||
