@@ -92,16 +92,7 @@ $(document).ready(function() {
     $("#time-remaining").text("2:00");
   });
 
-  //create array of correct values?
   //collect score once done or times out...that way don't have to worry about collecting score when a click happens
-
-  //this might be the one closest to working
-
-  // //if user chooses correct answer...
-  // $(".correct").click(function() {
-  //   //test this function is working
-  //   console.log("correct answer!");
-  // });
 
   //check if each question is correct with an if statement. see if input w class of this value is checked
 
@@ -116,7 +107,8 @@ $(document).ready(function() {
     clearInterval(intervalId);
 
     if (clickedOne.checked) correctAnsw++;
-    console.log(clickedOne.checked);
+    console.log(clickedOne);
+    // console.log(document.getElementsByClassName);
 
     if (clickedTwo.checked) correctAnsw++;
     if (clickedThree.checked) correctAnsw++;
