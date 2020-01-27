@@ -4,7 +4,6 @@
 //either users choices are right or not
 //either time runs out or user clicks done
 //there are right answers that are recorded (then displayed)
-//unanswered counted and recorded (then displayed)
 //incorrect answers recorded and displayed
 
 //GLOBAL VARIABLES
@@ -16,14 +15,13 @@ var clockRunning = false;
 var time = 120;
 //stores answers
 var correctAnsw = 0;
-var incorrectAnsw = 0;
-var unAnsw = 0;
-var clickedOne = document.getElementsByClassName("correct1");
-var clickedTwo = document.getElementsByClassName("correct2");
-var clickedThree = document.getElementsByClassName("correct3");
-var clickedFour = document.getElementsByClassName("correct4");
-var clickedFive = document.getElementsByClassName("correct5");
-var clickedSix = document.getElementsByClassName("correct6");
+
+var isChecked1 = $(".correct1").prop("checked");
+var isChecked2 = $(".correct2").prop("checked");
+var isChecked3 = $(".correct3").prop("checked");
+var isChecked4 = $(".correct4").prop("checked");
+var isChecked5 = $(".correct5").prop("checked");
+var isChecked6 = $(".correct6").prop("checked");
 
 //FUNCTIONS
 //==============================================
@@ -106,17 +104,16 @@ $(document).ready(function() {
 
     clearInterval(intervalId);
 
-    if (clickedOne.checked) correctAnsw++;
-    console.log(clickedOne);
-    // console.log(document.getElementsByClassName);
+    if (isChecked1) correctAnsw++;
+    console.log(isChecked1);
 
-    if (clickedTwo.checked) correctAnsw++;
-    if (clickedThree.checked) correctAnsw++;
-    if (clickedFour.checked) correctAnsw++;
-    if (clickedFive.checked) correctAnsw++;
-    if (clickedSix.checked) correctAnsw++;
+    if (isChecked2) correctAnsw++;
+    if (isChecked3) correctAnsw++;
+    if (isChecked4) correctAnsw++;
+    if (isChecked5) correctAnsw++;
+    if (isChecked6) correctAnsw++;
     $("#correct-text").appendTo(correctAnsw);
-    $("#incorrect-text").appendTo(incorrectAnsw - correctAnsw);
+    $("#incorrect-text").appendTo(6 - correctAnsw);
   }
 
   //when done button clicked, triviaPage hidden and score-page revealed
