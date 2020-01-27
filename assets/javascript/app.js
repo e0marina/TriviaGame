@@ -16,13 +16,6 @@ var time = 120;
 //stores answers
 var correctAnsw = 0;
 
-var isChecked1 = $(".correct1").prop("checked");
-var isChecked2 = $(".correct2").prop("checked");
-var isChecked3 = $(".correct3").prop("checked");
-var isChecked4 = $(".correct4").prop("checked");
-var isChecked5 = $(".correct5").prop("checked");
-var isChecked6 = $(".correct6").prop("checked");
-
 //FUNCTIONS
 //==============================================
 $(document).ready(function() {
@@ -103,17 +96,33 @@ $(document).ready(function() {
     console.log("reached 0");
 
     clearInterval(intervalId);
+    if ($("input:radio[class='correct1']").is(":checked")) {
+      correctAnsw++;
+      console.log("correctansw increasing");
+    }
+    if ($("input:radio[class='correct2']").is(":checked")) {
+      correctAnsw++;
+      console.log("correctansw increasing");
+    }
+    if ($("input:radio[class='correct3']").is(":checked")) {
+      correctAnsw++;
+      console.log("correctansw increasing");
+    }
+    if ($("input:radio[class='correct4']").is(":checked")) {
+      correctAnsw++;
+      console.log("correctansw increasing");
+    }
+    if ($("input:radio[class='correct5']").is(":checked")) {
+      correctAnsw++;
+      console.log("correctansw increasing");
+    }
+    if ($("input:radio[class='correct6']").is(":checked")) {
+      correctAnsw++;
+      console.log("correctansw increasing");
+    }
 
-    if (isChecked1) correctAnsw++;
-    console.log(isChecked1);
-
-    if (isChecked2) correctAnsw++;
-    if (isChecked3) correctAnsw++;
-    if (isChecked4) correctAnsw++;
-    if (isChecked5) correctAnsw++;
-    if (isChecked6) correctAnsw++;
-    $("#correct-text").appendTo(correctAnsw);
-    $("#incorrect-text").appendTo(6 - correctAnsw);
+    $("#correct-text").text("Correct Answers: " + correctAnsw);
+    $("#incorrect-text").append(6 - correctAnsw);
   }
 
   //when done button clicked, triviaPage hidden and score-page revealed
