@@ -1,11 +1,3 @@
-//TO DO:
-//=======================
-
-//either users choices are right or not
-//either time runs out or user clicks done
-//there are right answers that are recorded (then displayed)
-//incorrect answers recorded and displayed
-
 //GLOBAL VARIABLES
 //==============================================
 var intervalId;
