@@ -1,7 +1,7 @@
 //GLOBAL VARIABLES
 //==============================================
 var intervalId;
-//took this from the stopwatch activity
+
 // prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var time = 120;
@@ -16,25 +16,20 @@ $(document).ready(function() {
   $("#score-page").hide();
 
   function start() {
-    console.log("start func working");
-
     // Use setInterval to start the count here and set the clock to running...for 2 minutes
     if (!clockRunning) {
       intervalId = setInterval(count, 1000);
       clockRunning = true;
-      console.log("clock is running");
     }
   }
 
   function count() {
     // decrement time by 1
     time--;
-    console.log("count", time);
 
     //  Get the current time, pass that into the timeConverter function,
     //       and save the result in a variable.
     var converted = timeConverter(time);
-    console.log(converted);
 
     // Use the variable we just created to show the converted time in the "time-remaining" div.
     $("#time-remaining").text(converted);
@@ -64,9 +59,6 @@ $(document).ready(function() {
 
   //when start button clicked, triviaPage revealed, and start button hidden
   $("#start").click(function() {
-    //I'm running btw
-    console.log("i'm working");
-
     $(".triviaPage").show();
     $("#start").hide();
     //start the countdown, function called
@@ -90,27 +82,21 @@ $(document).ready(function() {
     clearInterval(intervalId);
     if ($("input:radio[class='correct1']").is(":checked")) {
       correctAnsw++;
-      console.log("correctansw increasing");
     }
     if ($("input:radio[class='correct2']").is(":checked")) {
       correctAnsw++;
-      console.log("correctansw increasing");
     }
     if ($("input:radio[class='correct3']").is(":checked")) {
       correctAnsw++;
-      console.log("correctansw increasing");
     }
     if ($("input:radio[class='correct4']").is(":checked")) {
       correctAnsw++;
-      console.log("correctansw increasing");
     }
     if ($("input:radio[class='correct5']").is(":checked")) {
       correctAnsw++;
-      console.log("correctansw increasing");
     }
     if ($("input:radio[class='correct6']").is(":checked")) {
       correctAnsw++;
-      console.log("correctansw increasing");
     }
 
     $("#correct-text").text("Correct Answers: " + correctAnsw);
